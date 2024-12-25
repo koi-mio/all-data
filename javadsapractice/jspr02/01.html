@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Learning</title>
+
+    <style>
+      .bg-black {
+        background-color: black;
+        color: white; /* Added for better contrast */
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- Added bg-black class to body -->
+    <div class="parent">
+      <!-- Added class 'parent' to div -->
+      <h1 class="heading">DOM Learning on Chai Aur Code</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, animi
+        minus dolores seniam! Impedit mollitia est optio?
+      </p>
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+      <div class="day">Friday</div>
+      <div class="day">Saturday</div>
+      <div class="day">Sunday</div>
+      <h1>Brendan Eich Like PavanWithCode</h1>
+    </div>
+    <script>
+      const parent = document.querySelector(".parent");
+
+      for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+      }
+
+      parent.children[1].style.color = "orange";
+
+      console.log(parent.firstElementChild);
+    </script>
+  </body>
+</html>

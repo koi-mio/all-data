@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block title %} Coffee from Home page 
+{% endblock title %} {% block content %}
+
+<div>
+  <h1>Home Page</h1>
+  <h2>
+    {% if from.instance.pk %}
+    <a href="{% url 'coffee:detail' from.instance.pk %}">View</a>
+    {% else %} Create Coffe {% endif %}
+    <form method="post" enctype="multipart/form-data" class="form">
+      {% csrf_token %} {{form.as_p}}
+      <button
+        type="submit"
+        class="px-4 py-2 font-bold text-white bg-blue-600 rounded btn-warning hover:bg-blue-700"
+      >
+        Submit
+      </button>
+    </form>
+  </h2>
+  <a href="{% url 'coffee_list' %}">back to Coffee list</a>
+</div>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %} {% block title %} login page render 
+{% endblock title %} {% block content %}
+<h1>
+  <center>logout page</center>
+</h1>
+
+<a href="{% url 'login' %}">
+  <button
+    class="px-4 py-2 font-bold text-white bg-blue-600 rounded btn-warning hover:bg-blue-700"
+  >
+    Login page
+  </button>
+</a>
+{% endblock content %}

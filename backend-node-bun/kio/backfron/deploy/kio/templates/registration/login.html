@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block title %} Login page {% endblock title %} 
+{% block content %}
+
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button
+    type="submit"
+    class="px-4 py-2 font-bold text-white bg-blue-600 rounded btn-warning hover:bg-blue-700"
+  >
+    Login
+  </button>
+</form>
+<p>
+  Donlt have an account urr
+  <button
+    class="px-4 py-2 font-bold text-white bg-blue-600 rounded btn-warning hover:bg-blue-700"
+  >
+    Register page
+  </button>
+</p>
+
+{% endblock content %}

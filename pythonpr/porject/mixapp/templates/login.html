@@ -1,0 +1,23 @@
+{% extends 'layout.html' %} {% block title %} Home page {% endblock title %} 
+{% block content %}
+<div>
+  <h1>Home page</h1>
+  <hr />
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
+    accusantium, alias architect o, asperiores at atque autem beatae
+    consequuntur cum cumque
+  </p>
+  <a href="/about">About</a>
+  <hr />
+  <a href="/contact">Contact</a>
+  <hr />
+  <a href="/">Home</a>
+  <hr />
+  <footer>
+    {% block footer %}
+    <p>Copyright © 2021</p>
+    {% endblock %}
+  </footer>
+</div>
+{% endblock content %}

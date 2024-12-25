@@ -1,0 +1,27 @@
+{% extends "layout.html" %} {% block title %} Chai Home Page {% endblock %} 
+
+
+{% block content %}
+<div class="py-20 bg-gradient-to-r from-orange-500 to-yellow-500">
+    <h1 class="text-4xl font-bold text-center text-white">All Chai for You</h1>
+  </div>
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {% for chai in chais %}
+    <div class="overflow-hidden bg-white rounded-lg shadow-md">
+      <img src="{{ chai.image.url }}" alt="" class="object-cover w-full />
+      <div class="p-4">
+        <h2 class="mb-2 text-2xl font-bold">{{ chai.name }}</h2>
+        <p class="mb-4 text-gray-600">{{ chai.description }}</p>
+        <p class="mb-4 font-bold text-gray-800">Price: {{ chai.price }}</p>
+        <p class="mb-4 text-gray-600">Type: {{ chai.type }}</p>
+        <a
+          href="{% url 'chai_detail' chai.id %}"
+          class="inline-block px-4 py-2 font-bold text-white bg-orange-500 rounded-md hover:bg-orange-600"
+          >Details</a
+        >
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

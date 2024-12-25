@@ -1,0 +1,34 @@
+{% extends 'layout.html' %} {% block title %} HoMe {% endblock title %}
+ {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Home</h1>
+      <p>Home page</p>
+    </div>
+    <a href="/about">
+      <button
+        class="px-4 py-2 font-bold text-white bg-orange-500 rounded hover:bg-orange-700"
+      >
+        Aout
+      </button>
+    </a>
+    <hr />
+    <a href="/contact">
+      <button
+        class="px-4 py-2 font-bold text-white bg-orange-500 rounded hover:bg-orange-700"
+      >
+        Cantact
+      </button>
+    </a>
+    <hr />
+    <a href="/tweet">
+      <button
+        class="px-4 py-2 font-bold text-white bg-orange-500 rounded hover:bg-orange-700"
+      >
+        tweet
+      </button>
+    </a>
+  </div>
+</div>
+{% endblock content %}

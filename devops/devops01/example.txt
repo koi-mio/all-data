@@ -1,0 +1,28 @@
+Hello, World!
+
+................................. ********************************* ...................
+
+revision point
+    Request for storage: A PVC is a request for a specific amount of storage resources, such as disk space or file system storage.
+    Bound to a PV: A PVC is bound to a PV, which is a resource that represents a piece of networked storage.
+    Used by a pod: A PVC is used by a pod to access the storage resources provided by the PV.
+    Persistent: A PVC is persistent, meaning that the storage resources are retained even if the pod is deleted or terminated.
+Types of PVCs:
+    Static PVC: A static PVC is a PVC that is bound to a PV that is created manually by an administrator.
+    Dynamic PVC: A dynamic PVC is a PVC that is bound to a PV that is created automatically by a StorageClass.
+Components of a PVC:
+    metadata: The metadata of a PVC includes its name, namespace, and labels.
+    spec: The spec of a PVC includes the requested storage resources, such as disk space or file system storage.
+    status: The status of a PVC includes the current state of the PVC, such as "Bound" or "Pending".
+Example of a PVC:
+yml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

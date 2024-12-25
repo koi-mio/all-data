@@ -1,0 +1,25 @@
+{% extends 'layout.html' %} {% block title %} Delete Coffee {% endblock title %}
+{% block content %}
+
+<h1>Welcome to django project</h1>
+<h2>Delete Coffee menu</h2>
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete "{{ coffee }}"?</p>
+  <button
+    type="submit"
+    value="Confirm"
+    class="px-4 py-2 font-bold text-white bg-orange-600 rounded hover:bg-orange-700"
+  >
+    Confirm
+  </button>
+  <hr />
+  <a href="{% url 'coffee_list' %}">
+    <button
+      class="px-4 py-2 font-bold text-white bg-orange-600 rounded hover:bg-orange-700"
+    >
+      Cancel
+    </button>
+  </a>
+</form>
+{% endblock content %}

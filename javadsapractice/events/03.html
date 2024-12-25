@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>settimeout working</h1>
+      <button id="start">Start</button>
+      <hr />
+      <button id="stop">Stop</button>
+    </div>
+  </body>
+  <script>
+    const sayDate = function () {
+      console.log("setInterval 2 second  ......... ", Date.now(), str);
+    };
+    const intervalid = setInterval(sayDate, 1000, "hey bro ");
+    clearInterval(intervalid);
+  </script>
+</html>

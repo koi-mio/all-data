@@ -1,0 +1,63 @@
+{% extends 'layout.html' %} {% block title %} Home page {% endblock title %}
+{%block content %}
+<div class="container p-4 pt-6 mx-auto md:p-6 lg:p-12">
+  <h1 class="mb-4 text-3xl font-bold">Home page</h1>
+  <hr class="border-gray-300" />
+  <p class="mb-6 text-lg leading-relaxed">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
+  </p>
+  <a
+    href="/about"
+    class="text-blue-600 transition duration-300 ease-in-out hover:text-blue-900"
+    ><button
+      class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+    >
+      About
+    </button></a
+  >
+  <hr class="border-gray-300" />
+  <a
+    href="/contact"
+    class="text-blue-600 transition duration-300 ease-in-out hover:text-blue-900"
+    ><button
+      class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+    >
+      Contact
+    </button></a
+  >
+  <hr class="border-gray-300" />
+  <a
+    href="/login"
+    class="text-blue-600 transition duration-300 ease-in-out hover:text-blue-900"
+  >
+    <button
+      class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+    >
+      Login
+    </button>
+  </a>
+  <hr class="border-gray-300" />
+  <a href="/coffeebook">
+    <button
+      class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+    >
+      CoffeeBook
+    </button>
+  </a>
+  <hr class="border-gray-300" />
+  <a href="/tweet">
+    <button
+      class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+    >
+      Tweet
+    </button>
+  </a>
+  <hr class="border-gray-300" />
+
+  <footer class="h-screen p-4 pt-6 bg-gray-200 md:p-6 lg:p-12">
+    {% block footer %}
+    <p class="text-sm text-gray-600">Copyright © 2021</p>
+    {% endblock %}
+  </footer>
+</div>
+{% endblock content %}

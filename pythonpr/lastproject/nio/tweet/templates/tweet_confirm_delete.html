@@ -1,0 +1,27 @@
+{% extends 'layout.html' %} {% block title %} Delete tweet {% endblock title %}
+
+
+{% block content %}
+
+<h1>Welcome to django project</h1>
+<h2>Delete tweet</h2>
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete "{{ tweet }}"?</p>
+  <button
+    type="submit"
+    value="Confirm"
+    class="px-4 py-2 font-bold text-white bg-orange-600 rounded hover:bg-orange-700"
+  >
+    Confirm
+  </button>
+  <hr />
+  <a href="{% url 'tweet_list' %}">
+    <button
+      class="px-4 py-2 font-bold text-white bg-orange-600 rounded hover:bg-orange-700"
+    >
+      Cancel
+    </button>
+  </a>
+</form>
+{% endblock content %}

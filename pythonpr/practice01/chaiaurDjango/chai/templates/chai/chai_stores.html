@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block title %} Store and room {% endblock title%}
+{% block content %}
+<div>
+  <form action="POST">
+    {% csrf_token %} {{form.as_p}}
+    <h1>Store and room</h1>
+    <button type="submit">Search Store</button>
+  </form>
+</div>
+
+{% if stores %}
+<h2>Stores available</h2>
+<ul>
+  {% for store in stores %}
+  <li>{{store.name}}</li>
+  {% endfor %}
+</ul>
+{% endif %} {% endblock content %}

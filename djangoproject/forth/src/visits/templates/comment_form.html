@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} {% block title %} Comment Page {% endblock title %}
+{% block content %}
+<div class="max-w-2xl p-4 mx-auto">
+  <h2 class="mb-4 text-2xl font-bold">{{ visit.title }}</h2>
+  <p class="mb-6 text-gray-700">{{ visit.content }}</p>
+
+  <h3 class="mb-2 text-xl font-semibold">Comments</h3>
+  <ul class="p-4 border border-gray-300 rounded-lg">
+    {% for comment in visit.comments.all %}
+    <li class="mb-2">
+      <strong class="text-blue-600">{{ comment.user.username }}</strong>:
+      <span class="text-gray-800">{{ comment.text }}</span>
+      <span class="text-sm text-gray-500"
+        >({{ comment.created_at|date:"F j, Y, g:i a" }})</span
+      >
+    </li>
+    {% empty %}
+    <li class="text-gray-500">No comments yet.</li>
+    {% endfor %}
+  </ul>
+
+  {% if user.is_authenticated %}
+  <h4 class="mt-6 text-lg font-semibold">Add a Comment</h4>
+  <form method="post" action="{% url 'comment_create' visit.id %}" class="mt-4">
+    {% csrf_token %} {% for field in form %}
+    <div class="mb-4">
+      {{ field.label_tag }} {{ field | add_class:"border border-gray-300
+      rounded-lg p-2 w-full" }} {% if field.help_text %}
+      <p class="text-sm text-gray-500">{{ field.help_text }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <button
+      type="submit"
+      class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-600"
+    >
+      Submit
+    </button>
+  </form>
+  {% else %}
+  <p class="text-gray-600">
+    You must be logged in to comment.
+    <a href="{% url 'login' %}" class="text-blue-500 hover:underline">Login</a>
+  </p>
+  {% endif %}
+</div>
+{% endblock content %}

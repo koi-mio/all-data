@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myButton">Click Me</button>
+    <div id="myDiv"></div>
+    <form id="myForm">
+      <label for="name">Name : </label>
+      <input type="text" id="name" name="name" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      // Selecting Elements
+      const button = document.getElementById("myButton");
+      const div = document.querySelector("#myDiv");
+      const form = document.getElementById("myForm");
+
+      // Modifying Elements
+      button.textContent = "Press Me";
+      div.innerHTML = "<p>Welcome to DOM Manipulation!</p>";
+
+      // Event Handling
+      button.addEventListener("click", function () {
+        div.textContent = "Button Clicked!";
+      });
+
+      // Form and User Input
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const nameInput = document.getElementById("name").value;
+        console.log(`Name: ${nameInput}`);
+      });
+    </script>
+  </body>
+</html>
